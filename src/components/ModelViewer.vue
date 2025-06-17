@@ -148,7 +148,7 @@ const settings = reactive({
   rotationX: 0,
   rotationY: 0,
   rotationZ: 0,
-  scale: 1,
+  scale: 50,
   showTexture: true,
   showGrid: true,
   showAxes: true,
@@ -693,6 +693,7 @@ watch(() => props.modelId, (newId) => {
 
 .settings-toggle {
   position: absolute;
+  
   top: 1rem;
   right: 1rem;
   background: rgba(0, 0, 0, 0.7);
@@ -770,6 +771,7 @@ watch(() => props.modelId, (newId) => {
 
 .settings-panel {
   position: absolute;
+  height: 30em;
   top: 4rem;
   right: 1rem;
   background: rgba(255, 255, 255, 0.7);

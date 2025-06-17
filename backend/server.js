@@ -7,6 +7,8 @@ const connectDB = require('./config/db');
 const authRoutes = require('./routes/auth.js');
 const itemRoutes = require('./routes/items');
 const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpecs = require('./config/swagger');
 
 
 const app = express();
@@ -35,6 +37,7 @@ app.get('/health', (req, res) => {
 
 app.use('/api/auth', authRoutes);
 app.use('/api/items', itemRoutes);
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 
 app.use((err, req, res, next) => {
